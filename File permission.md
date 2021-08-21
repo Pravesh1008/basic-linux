@@ -73,3 +73,30 @@ The table below gives numbers for all for permissions types.
 | **6** | read,write | rw- |
 | **7** | read,write,execute | rwx |
 
+Some examples using chmod in **Absolute mode**
+
+give permission to a file read,write,execute for user and read write for group and read for others
+```sh
+chmod 764 file name
+```
+Use of **-R** option with chmod
+
+-R (--recursive) = change files and directories recursively
+
+Example
+```sh
+chmod -R permissions (directory name)
+it set the permission of directory as well as files in the directory
+```
+## Changing ownership of file/directory
+``sh
+command : chown
+chown command is used to change the file Owner or group.
+```
+
+
+User: A user is the one who created the file. By default, whosoever, creates the file becomes the owner of the file. A user can create, delete, or modify the file.
+
+Group: A group can contain multiple users. All the users belonging to a group have same access permission for a file.
+
+Other: Any one who has access to the file other than user and group comes in the category of other. Other has neither created the file nor is a group member.
