@@ -30,5 +30,46 @@ There are two ways to use the command
 | **+** | Adds a permission to a file or directory |
 | **-** | remove a permission to a file or directory |
 | **=** | Sets the permission and overrides the permissions set earlier. |
+| **u** | user/owner |
+| **g** | group |
+| **o** | other |
+| **a** | all |
 
+Example
+
+[prarvesh@main directory]$ ls -l
+```sh
+-rw-rw-r-- 1 prarvesh prarvesh 0 Aug 21 11:23 file
+fist - => It represent a file
+rw- => permission for user
+rw- => permission for group
+r-- => permission for other
+```
+Some examples using chmod in **symbolic mode**
+
+add read write permission for user and group
+```sh
+chmod ug+rw file name
+```
+remove execute permission for all
+```sh
+chmod a-x filename
+```
+set the permission read ,write,execute for user and read write for group and read for others
+```sh
+chmod u=rwx,g=rx,o=r
+```
+## Absolute method
+
+The table below gives numbers for all for permissions types.
+| Number| Permission type | symbol |
+| --- | --- | --- |
+| **0** | No permission | --- |
+| **1** | execute | --x |
+| **2** | write | -w- |
+| **3** | write,execute | -wx |
+| **4** | read | r-- |
+| **5** | read,execute | r-x |
+| **6** | read,write | rw- |
+| **7** | read,write,execute | rwx |
 
