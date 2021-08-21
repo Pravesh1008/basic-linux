@@ -89,8 +89,10 @@ chmod -R permissions (directory name)
 it set the permission of directory as well as files in the directory
 ```
 ## Changing ownership of file/directory
-``sh
+```sh
+
 command : chown
+
 chown command is used to change the file Owner or group.
 ```
 
@@ -100,3 +102,39 @@ User: A user is the one who created the file. By default, whosoever, creates the
 Group: A group can contain multiple users. All the users belonging to a group have same access permission for a file.
 
 Other: Any one who has access to the file other than user and group comes in the category of other. Other has neither created the file nor is a group member.
+
+Change user ownership
+```sh
+
+before
+
+-rw-rw-r-- 1 **prarvesh** prarvesh 0 Aug 21 11:23 file
+
+chown root file
+I am using root user for user ownership
+if you run this command from normal user please use sudo
+
+After
+
+-rwxrwxr-- 1 **root** prarvesh 0 Aug 21 11:23 file
+```
+Change group ownership
+```sh
+before
+
+-rw-rw-r-- 1 root **prarvesh** 0 Aug 21 11:23 file
+chown :root file  or chgrp root file
+i am using group root
+
+After
+
+-rwxrwxr-- 1 root **root** 0 Aug 21 11:23 file
+```
+Changing both user and group ownership
+
+```sh
+chown prarvesh:prarvesh file
+```
+output: -rwxrwxr-- 1 **prarvesh prarvesh** 0 Aug 21 11:23 file
+
+Thanks
